@@ -1,16 +1,37 @@
 #include <iostream> // for cout and cin
-#include <string>  // for string variable
-
+#include <string>// for string variable
+#include <ctime> // for time
+#include <cstdlib> // for generating random numbers
+#include <limits> // for numeric_limits
 using namespace std;
 
+// Enum to represent the math operation
+enum Mathtype {
+  ADDITION, SUBSTRATION, MULTIPLICATION, DIVISION };
+
+// constant value for the maximum attempts
+const int MAX_ATTETMPTS = 3;
+// constant value for the max level a user can get to, in the program
+const int LEVEL_RANGE_CHANGE = 10;
+
 int main() { //numbers for the math tutor
-    int userAns;
-    int leftNum;
-    int rightNum;
-    int mathType;
-    int correctAns;
-    int temp; 
-    char mathSymbol; 
+    int userAns = 0;
+    int leftNum = 0;
+    int rightNum = 0;
+    int mathType ;
+    int correctAns = 0;
+    int temp;
+    int mathLevel = 1;
+    char mathSymbol;
+
+    // loop until the user enters numeric data
+while(! (cin >> userAns)) {
+  cin.clear(); // clear the cin error flag
+  cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore the max input up to '\n'
+  cout << "Invalid input!!" << endl;
+  cout << "Please enter a number: ";
+  } // end of the useAns while loop
+
 srand(static_cast<unsigned int>(time(0))); // seed for the random number generator
 
     string userName;
@@ -79,9 +100,9 @@ srand(static_cast<unsigned int>(time(0))); // seed for the random number generat
     cout << endl;
 
     cout << userName << ", " << endl;
-    cout << "What is " << leftNum << " " << mathSymbol << " " << rightNum << " = ?" << endl; 
-        cout << "Answer: "; 
-        cin >> userAns; 
+    cout << "What is " << leftNum << " " << mathSymbol << " " << rightNum << " = " ;
+
+       cin >> userAns;
 
     if (userAns == correctAns) {
         cout << "Great Job!!" << endl; }
