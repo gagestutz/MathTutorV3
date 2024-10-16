@@ -84,13 +84,14 @@ srand(static_cast<unsigned int>(time(0))); // seed for the random number generat
         cin >> userAns; 
 
     if (userAns == correctAns) {
-        cout << "Great Job!!" << endl; }
+        cout << "Great Job, that is correct!" << endl; }
     else { 
         cout << "Incorrect. The right answer is: " << correctAns << "." << endl; }
 
     // create an outro for the tutor web
     cout << endl;
-    cout << "Since this was the best tutor ever, feel free to stick around for the free trial!";
+    cout << "Since this was the best tutor ever," << endl; 
+    cout << "feel free to stick around for the free trial!" << endl; 
     cout << endl;
     cout << endl;
 
